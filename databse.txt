@@ -1,0 +1,23 @@
+# db_connection.py
+import mysql.connector
+
+def setup_database():
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="your_password",
+        database="file_metadata_db"
+    )
+    
+    # Creating the table if it doesn't exist
+    cursor = db.cursor()
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS file_metadata (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        file_name VARCHAR(255),
+        sha256_hash VARCHAR(64),
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+    """)
+    
+    return db
