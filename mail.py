@@ -9,7 +9,7 @@ port = 587  # For TLS
 # Sender's and receiver's email addresses
 sender_email = "kiryugaming99@outlook.com"
 receiver_email = "dsteyn431@gmail.com"
-app_password = "Adeen@2905"  # Use the App Password
+app_password = "password"  # Use the App Password
 
 # Email content
 subject = "Test Email"
